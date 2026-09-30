@@ -1,0 +1,323 @@
+{
+  "seed": 20260930,
+  "replications_per_scenario": 500,
+  "runtime_seconds": 115.5,
+  "scenarios": [
+    {
+      "name": "baseline",
+      "label": "Baseline labor plan",
+      "description": "Conventional plan: 10 pickers on a flat 10-hour shift, manual pick-to-cart at 1.8 min/line.",
+      "stages": {
+        "receiving": {
+          "staff_schedule": [
+            [
+              0,
+              600,
+              6
+            ]
+          ],
+          "mean_minutes": 3.0,
+          "per_line_minutes": null,
+          "cv": 0.35,
+          "scheduled_staff_minutes": 3600.0
+        },
+        "picking": {
+          "staff_schedule": [
+            [
+              0,
+              600,
+              10
+            ]
+          ],
+          "mean_minutes": 0.0,
+          "per_line_minutes": 1.8,
+          "cv": 0.45,
+          "scheduled_staff_minutes": 6000.0
+        },
+        "packing": {
+          "staff_schedule": [
+            [
+              0,
+              600,
+              6
+            ]
+          ],
+          "mean_minutes": 4.5,
+          "per_line_minutes": null,
+          "cv": 0.35,
+          "scheduled_staff_minutes": 3600.0
+        },
+        "shipping": {
+          "staff_schedule": [
+            [
+              0,
+              600,
+              5
+            ]
+          ],
+          "mean_minutes": 2.5,
+          "per_line_minutes": null,
+          "cv": 0.3,
+          "scheduled_staff_minutes": 3000.0
+        }
+      }
+    },
+    {
+      "name": "amr_automation",
+      "label": "AMR-assisted picking (automation)",
+      "description": "Autonomous mobile robots bring goods to stationary pickers: pick time falls to 1.08 min/line (-40%) and the picking crew shrinks from 10 to 7.",
+      "stages": {
+        "receiving": {
+          "staff_schedule": [
+            [
+              0,
+              600,
+              6
+            ]
+          ],
+          "mean_minutes": 3.0,
+          "per_line_minutes": null,
+          "cv": 0.35,
+          "scheduled_staff_minutes": 3600.0
+        },
+        "picking": {
+          "staff_schedule": [
+            [
+              0,
+              600,
+              7
+            ]
+          ],
+          "mean_minutes": 0.0,
+          "per_line_minutes": 1.08,
+          "cv": 0.4,
+          "scheduled_staff_minutes": 4200.0
+        },
+        "packing": {
+          "staff_schedule": [
+            [
+              0,
+              600,
+              6
+            ]
+          ],
+          "mean_minutes": 4.5,
+          "per_line_minutes": null,
+          "cv": 0.35,
+          "scheduled_staff_minutes": 3600.0
+        },
+        "shipping": {
+          "staff_schedule": [
+            [
+              0,
+              600,
+              5
+            ]
+          ],
+          "mean_minutes": 2.5,
+          "per_line_minutes": null,
+          "cv": 0.3,
+          "scheduled_staff_minutes": 3000.0
+        }
+      }
+    },
+    {
+      "name": "shift_policy",
+      "label": "Peak-aligned shift (shift policy)",
+      "description": "Same picker labor-hours as baseline, re-timed: 7 pickers in the early morning, a 13-picker surge 10:30-15:30 across the demand peak, then 7 through close.",
+      "stages": {
+        "receiving": {
+          "staff_schedule": [
+            [
+              0,
+              600,
+              6
+            ]
+          ],
+          "mean_minutes": 3.0,
+          "per_line_minutes": null,
+          "cv": 0.35,
+          "scheduled_staff_minutes": 3600.0
+        },
+        "picking": {
+          "staff_schedule": [
+            [
+              0,
+              150,
+              7
+            ],
+            [
+              150,
+              450,
+              13
+            ],
+            [
+              450,
+              600,
+              7
+            ]
+          ],
+          "mean_minutes": 0.0,
+          "per_line_minutes": 1.8,
+          "cv": 0.45,
+          "scheduled_staff_minutes": 6000.0
+        },
+        "packing": {
+          "staff_schedule": [
+            [
+              0,
+              600,
+              6
+            ]
+          ],
+          "mean_minutes": 4.5,
+          "per_line_minutes": null,
+          "cv": 0.35,
+          "scheduled_staff_minutes": 3600.0
+        },
+        "shipping": {
+          "staff_schedule": [
+            [
+              0,
+              600,
+              5
+            ]
+          ],
+          "mean_minutes": 2.5,
+          "per_line_minutes": null,
+          "cv": 0.3,
+          "scheduled_staff_minutes": 3000.0
+        }
+      }
+    }
+  ],
+  "summary": [
+    {
+      "scenario": "baseline",
+      "orders_arrived_mean": 631.24,
+      "orders_arrived_ci95": 2.0944915179,
+      "orders_shipped_mean": 631.24,
+      "orders_shipped_ci95": 2.0944915179,
+      "same_day_shipped_mean": 616.956,
+      "same_day_shipped_ci95": 1.5324778502,
+      "late_shipped_mean": 14.284,
+      "late_shipped_ci95": 1.5186539773,
+      "same_day_ship_rate_mean": 0.978037017,
+      "same_day_ship_rate_ci95": 0.002295186,
+      "cycle_mean_min_mean": 75.9198738146,
+      "cycle_mean_min_ci95": 1.0341128866,
+      "cycle_p50_min_mean": 77.9404446487,
+      "cycle_p50_min_ci95": 1.2138084853,
+      "cycle_p95_min_mean": 133.4250090179,
+      "cycle_p95_min_ci95": 1.9289832471,
+      "avg_picking_wait_min_mean": 55.7559039419,
+      "avg_picking_wait_min_ci95": 1.0175917331,
+      "makespan_min_mean": 613.2434405777,
+      "makespan_min_ci95": 2.1968853083,
+      "util_receiving_mean": 0.5257322093,
+      "util_receiving_ci95": 0.0018263338,
+      "util_picking_mean": 0.9512001406,
+      "util_picking_ci95": 0.0038455634,
+      "util_packing_mean": 0.7888851477,
+      "util_packing_ci95": 0.0028255274,
+      "util_shipping_mean": 0.5258846466,
+      "util_shipping_ci95": 0.0018159742,
+      "util_window_picking_mean": 0.9996649196,
+      "util_window_picking_ci95": 0.0001834067,
+      "peak_utilization_mean": 0.9512001406,
+      "peak_utilization_ci95": 0.0038455634,
+      "peak_window_utilization_mean": 0.9996649196,
+      "peak_window_utilization_ci95": 0.0001834067
+    },
+    {
+      "scenario": "amr_automation",
+      "orders_arrived_mean": 631.24,
+      "orders_arrived_ci95": 2.0944915179,
+      "orders_shipped_mean": 631.24,
+      "orders_shipped_ci95": 2.0944915179,
+      "same_day_shipped_mean": 631.222,
+      "same_day_shipped_ci95": 2.0903676463,
+      "late_shipped_mean": 0.018,
+      "late_shipped_ci95": 0.03528,
+      "same_day_ship_rate_mean": 0.999974212,
+      "same_day_ship_rate_ci95": 5.05444e-05,
+      "cycle_mean_min_mean": 45.9870889503,
+      "cycle_mean_min_ci95": 0.7439258321,
+      "cycle_p50_min_mean": 48.9079397003,
+      "cycle_p50_min_ci95": 0.9015287439,
+      "cycle_p95_min_mean": 76.6395603934,
+      "cycle_p95_min_ci95": 1.3609474543,
+      "avg_picking_wait_min_mean": 27.2951844518,
+      "avg_picking_wait_min_ci95": 0.7573371348,
+      "makespan_min_mean": 540.259904427,
+      "makespan_min_ci95": 1.6407599043,
+      "util_receiving_mean": 0.5257322093,
+      "util_receiving_ci95": 0.0018263338,
+      "util_picking_mean": 0.8154312369,
+      "util_picking_ci95": 0.0032372962,
+      "util_packing_mean": 0.7888851477,
+      "util_packing_ci95": 0.0028255274,
+      "util_shipping_mean": 0.5258846466,
+      "util_shipping_ci95": 0.0018159742,
+      "util_window_picking_mean": 0.9965748148,
+      "util_window_picking_ci95": 0.000606342,
+      "peak_utilization_mean": 0.8173508646,
+      "peak_utilization_ci95": 0.0031560062,
+      "peak_window_utilization_mean": 0.9967397311,
+      "peak_window_utilization_ci95": 0.0005869191
+    },
+    {
+      "scenario": "shift_policy",
+      "orders_arrived_mean": 631.24,
+      "orders_arrived_ci95": 2.0944915179,
+      "orders_shipped_mean": 631.24,
+      "orders_shipped_ci95": 2.0944915179,
+      "same_day_shipped_mean": 631.08,
+      "same_day_shipped_ci95": 2.0609944014,
+      "late_shipped_mean": 0.16,
+      "late_shipped_ci95": 0.1256391805,
+      "same_day_ship_rate_mean": 0.9997693948,
+      "same_day_ship_rate_ci95": 0.0001793031,
+      "cycle_mean_min_mean": 68.440512152,
+      "cycle_mean_min_ci95": 0.9782091809,
+      "cycle_p50_min_mean": 72.5576526106,
+      "cycle_p50_min_ci95": 1.1274242118,
+      "cycle_p95_min_mean": 98.0882811105,
+      "cycle_p95_min_ci95": 1.4169140511,
+      "avg_picking_wait_min_mean": 36.583411249,
+      "avg_picking_wait_min_ci95": 0.9676688711,
+      "makespan_min_mean": 559.9804966568,
+      "makespan_min_ci95": 1.7568657983,
+      "util_receiving_mean": 0.5257322093,
+      "util_receiving_ci95": 0.0018263338,
+      "util_picking_mean": 0.9512001406,
+      "util_picking_ci95": 0.0038455634,
+      "util_packing_mean": 0.7888851477,
+      "util_packing_ci95": 0.0028255274,
+      "util_shipping_mean": 0.5258846466,
+      "util_shipping_ci95": 0.0018159742,
+      "util_window_picking_mean": 0.9994429353,
+      "util_window_picking_ci95": 0.000469057,
+      "peak_utilization_mean": 0.9512001406,
+      "peak_utilization_ci95": 0.0038455634,
+      "peak_window_utilization_mean": 0.9998343634,
+      "peak_window_utilization_ci95": 9.4298e-05
+    }
+  ],
+  "headline_deltas_vs_baseline_pct": {
+    "amr_automation": {
+      "same_day_shipped_pct_change": 2.3123204896297245,
+      "cycle_mean_pct_change": -39.426810610048726,
+      "cycle_p95_pct_change": -42.55982371104667,
+      "peak_utilization": 0.8173508645675525,
+      "pickers": null
+    },
+    "shift_policy": {
+      "same_day_shipped_pct_change": 2.28930426156809,
+      "cycle_mean_pct_change": -9.851651862473707,
+      "cycle_p95_pct_change": -26.484336158168613,
+      "peak_utilization": 0.9512001405833875,
+      "pickers": null
+    }
+  }
+}
